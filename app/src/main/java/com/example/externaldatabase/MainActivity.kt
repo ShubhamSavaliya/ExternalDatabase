@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
     private fun initView() {
         binding.imgMenu.setOnClickListener {
             binding.drawerOpen.openDrawer(Gravity.LEFT)
-
         }
 
 
