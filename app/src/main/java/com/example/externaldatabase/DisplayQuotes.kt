@@ -46,7 +46,7 @@ class DisplayQuotes : AppCompatActivity() {
             }, DeleteClick = { Id ->
                 MyDatabase(this).deleteData(Id)
                 onResume()
-            })
+            },type)
         val layoutmanager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rcvShayri.layoutManager = layoutmanager
         binding.rcvShayri.adapter = shayriAdapter

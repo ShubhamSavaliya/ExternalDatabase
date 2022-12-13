@@ -20,6 +20,7 @@ class ShayriAdapter(
     var shayri: ArrayList<ShayriModalClass>,
     var shayriItemClick: (String, Int) -> Unit,
     var DeleteClick: (Int) -> Unit,
+    var type: String?,
 ) :
     RecyclerView.Adapter<ShayriAdapter.MyViewHolder>() {
 
@@ -102,6 +103,7 @@ class ShayriAdapter(
             holder.binding.txtShayri.text.toString()
             var intent = Intent(context, ShayriImageActivity::class.java)
             intent.putExtra("shayriimage", shayri[position].shayri)
+            intent.putExtra("category", type)
             context.startActivity(intent)
         }
     }

@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 class FavoriteFragment : Fragment() {
 
     lateinit var v: View
-    lateinit var rcv_fcvdisplay:RecyclerView
+    lateinit var rcv_fcvdisplay: RecyclerView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,8 +23,8 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun initView() {
-
-        rcv_fcvdisplay=v.findViewById(R.id.rcv_fcvdisplay)
+        var type = String()
+        rcv_fcvdisplay = v.findViewById(R.id.rcv_fcvdisplay)
         var myDatabase = MyDatabase(context)
         var favorite = myDatabase.LikeShayriData()
         var shayriAdapter =
@@ -33,7 +33,7 @@ class FavoriteFragment : Fragment() {
 
                 }, DeleteClick = {
 
-                })
+                }, type)
             }
         val layoutmanager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         rcv_fcvdisplay.layoutManager = layoutmanager
